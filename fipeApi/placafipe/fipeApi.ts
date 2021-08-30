@@ -1,6 +1,6 @@
 import FipeCrawler from "../fipeCrawler";
 
-const FIPE_ELEMENT_SELECTOR = '#layout > div.pure-g.template-center > div > div > div > div:nth-child(15) > table > tbody > tr:nth-child(1) > td.fipeValorVeiculo';
+const FIPE_ELEMENT_SELECTOR = 'td.fipeValorVeiculo';
 
 export default class PlacaFipeCrawler extends FipeCrawler {
 
