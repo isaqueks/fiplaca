@@ -1,7 +1,7 @@
 import express from 'express';
 import fipeHandler from './routes/fipe';
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.get('/:placa', fipeHandler);
 
