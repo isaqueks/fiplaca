@@ -1,5 +1,6 @@
 import express from 'express';
 import FipeCrawler from '../fipeApi/fipeCrawler';
+import FipeResult from '../fipeApi/fipeResult';
 import PlacaFipeCrawler from '../fipeApi/placafipe/fipeApi';
 import TabelaFipeBrasilCrawler from '../fipeApi/tabelafipebrasil/fipeApi';
 import { VehiclePlateValidation } from '../validate.ts/validate'
@@ -27,7 +28,10 @@ export default async function fipeHandler (req: express.Request, res: express.Re
             promises.push(crawler.fetch(placa));
         }
 
-        const result = await Promise.all(promises);
+        const promiseResult = await Promise.allSettled(promises);
+        const result = promiseResult
+            .filter(promise => promise.status === 'fulfilled')
+            .map(promise => (promise as PromiseFulfilledResult<FipeResult>).value)
 
         return res.status(200).json(result);
 
