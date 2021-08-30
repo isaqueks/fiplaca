@@ -59,7 +59,7 @@ export default abstract class FipeCrawler {
             cleanStr += ch;
         }
     
-        return parseInt(cleanStr);
+        return parseFloat(cleanStr);
     }
 
 }
