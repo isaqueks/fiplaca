@@ -3,7 +3,7 @@ import FipeCrawler from '../fipeApi/fipeCrawler';
 import FipeResult from '../fipeApi/fipeResult';
 import PlacaFipeCrawler from '../fipeApi/placafipe/fipeApi';
 import TabelaFipeBrasilCrawler from '../fipeApi/tabelafipebrasil/fipeApi';
-import { VehiclePlateValidation } from '../validate.ts/validate'
+import VehiclePlateValidation from '../validate.ts/vehiclePlateValidation'
 
 const crawlers: FipeCrawler[] = [
     new TabelaFipeBrasilCrawler(),
