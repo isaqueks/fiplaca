@@ -1,4 +1,8 @@
 # fiplaca
+
+### ⚠️ Não está mais no ar
+<hr>
+
 ## API pública e gratuita para consultar a FIPE de veículos pela placa
 <hr>
 
